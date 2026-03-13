@@ -1,1 +1,417 @@
 # Frame-shop
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Frame Shop</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#2ea8ff,#6ecbff);
+color:white;
+overflow-x:hidden;
+}
+
+/* CLOUD */
+
+.cloud{
+
+position:fixed;
+left:-300px;
+
+width:300px;
+height:120px;
+
+background:white;
+border-radius:100px;
+
+opacity:0.8;
+
+animation:cloudmove 60s linear infinite;
+
+}
+
+.cloud::before{
+
+content:"";
+
+position:absolute;
+
+top:-40px;
+left:40px;
+
+width:140px;
+height:140px;
+
+background:white;
+
+border-radius:50%;
+
+}
+
+.cloud::after{
+
+content:"";
+
+position:absolute;
+
+top:-20px;
+left:120px;
+
+width:100px;
+height:100px;
+
+background:white;
+
+border-radius:50%;
+
+}
+
+@keyframes cloudmove{
+
+0%{left:-300px;}
+100%{left:110%;}
+
+}
+
+/* HEADER */
+
+header{
+
+background:rgba(0,0,0,0.6);
+padding:20px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+/* MENU */
+
+nav a{
+
+margin-left:20px;
+text-decoration:none;
+color:white;
+font-size:16px;
+transition:0.3s;
+
+}
+
+nav a:hover{
+color:yellow;
+}
+
+/* HERO */
+
+.hero{
+
+text-align:center;
+padding:80px 20px;
+
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+/* GIF */
+
+.anime{
+
+width:250px;
+border-radius:15px;
+margin-top:30px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+
+}
+
+/* PROFILE */
+
+.profile{
+
+width:200px;
+border-radius:20px;
+margin-top:25px;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+
+}
+
+/* CONTAINER */
+
+.container{
+
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+/* CARD */
+
+.card{
+
+position:relative;
+
+padding:25px;
+
+border-radius:15px;
+
+background:rgba(0,0,0,0.7);
+
+text-align:center;
+
+}
+
+/* LED BORDER */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-3px;
+left:-3px;
+right:-3px;
+bottom:-3px;
+
+border-radius:18px;
+
+background:linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+cyan,
+blue,
+purple,
+red
+);
+
+background-size:400%;
+
+z-index:-1;
+
+animation:led 5s linear infinite;
+
+}
+
+@keyframes led{
+
+0%{background-position:0%}
+100%{background-position:400%}
+
+}
+
+/* BUTTON */
+
+button{
+
+margin-top:15px;
+
+padding:12px 25px;
+
+font-size:16px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+background:linear-gradient(90deg,#00c6ff,#8a2be2);
+
+color:white;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 15px #00c6ff;
+
+}
+
+/* TITLE */
+
+.section-title{
+
+text-align:center;
+
+font-size:32px;
+
+margin-bottom:30px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:rgba(0,0,0,0.7);
+
+padding:20px;
+
+text-align:center;
+
+margin-top:40px;
+
+font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- CLOUD -->
+
+<div class="cloud" style="top:60px;"></div>
+<div class="cloud" style="top:150px; animation-duration:80s;"></div>
+<div class="cloud" style="top:250px; animation-duration:100s;"></div>
+
+<header>
+
+<div class="logo">Frame Shop</div>
+
+<nav>
+
+<a href="#home">หน้าแรก</a>
+<a href="#service">บริการ</a>
+<a href="#price">ราคา</a>
+<a href="#contact">ติดต่อ</a>
+
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+<h1>Frame Shop</h1>
+
+<p>ร้านรับแบก 4-4 ปลอดภัย เล่นจริง</p>
+
+
+<br>
+
+<img class="profile"
+src="https://bio.newthings-games.com/02043420260314.jpg">
+
+</section>
+
+<!-- SERVICE -->
+
+<section id="service" class="container">
+
+<h2 class="section-title">บริการของเรา</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>แบกแรงค์</h3>
+<p>ช่วยดันแรงค์อย่างรวดเร็ว</p>
+<button>สามารถไปติดต่อที่ดิสคอสได้</button>
+</div>
+  
+<div class="card">
+<h3>เล่นกับลูกค้า</h3>
+<p>เล่นทีมเดียวกันแบบสนุก</p>
+<button>สามารถไปติดต่อที่ดิสคอสได้</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRICE -->
+
+<section id="price" class="container">
+
+<h2 class="section-title">ราคา</h2>
+
+<div class="card">
+
+<p>แบกแรงค์ 1 เกม 3 บ </p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="container">
+
+<h2 class="section-title">ติดต่อ</h2>
+
+<div class="card">
+
+<p>กดปุ่มด้านล่างเพื่อเข้าดิสคอร์ด</p>
+
+<a href="https://discord.gg/fnrs8GT5V">
+
+<button>เข้า Discord</button>
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Frame Shop</p>
+
+</footer>
+
+</body>
+
+</html>
